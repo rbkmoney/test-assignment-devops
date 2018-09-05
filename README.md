@@ -1,17 +1,32 @@
-WebSocket chat
-=====
-Simple web-chat written on Erlang
-and based on WebSockets as transport layer.
+# Тестовое задание
 
-Extra goal (not done): do it without cowboy. :)
+## Дано
+
+- Этот репозиторий с исходниками [приложения](#Приложение).
+- Две Linux (дистрибутив на выбор) машины: salt master и salt minion.
 
 
-Build
------
+## Задача
 
-    $ make compile
+1. Контейнеризировать приложение.
+1. Развернуть docker host на minion машине с помощью salt states.
+1. Развернуть и запустить приложение на docker host с помощью salt states.
 
-Run
----
+Результатом тестового задания должен быть PR с кодом (salt states, Dockerfile ...) и документацией для развертывания.
+При проверке будем пробовать всё развернуть и запустить.
 
-    $ make start
+# Приложение
+
+Web chat на _Erlang_ и _WebSockets_.
+
+Build:
+
+```shell
+$ make compile
+```
+
+Run:
+
+```shell
+$ make start
+```
