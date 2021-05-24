@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ include "chart.name" . }} 
+  namespace: {{ include "chart.name" . }} 
+  annotations:
+   kubernetes.io/ingress.class: 
+spec:
+  rules:
+    - host: {{ .Values.url  }}
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: {{ include "chart.name" . }}
+              servicePort: {{ .Values.service.port }}
